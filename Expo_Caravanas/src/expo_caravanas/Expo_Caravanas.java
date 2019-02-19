@@ -18,7 +18,7 @@ public class Expo_Caravanas {
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
+        boolean b;
         int n = 0;
 
         Zona Principal = new Zona(1000);
@@ -31,7 +31,7 @@ public class Expo_Caravanas {
 
                 case 1:
                     int t = Principal.getEntradas() + Compra_venta.getEntradas() + VIP.getEntradas();
-                    System.out.println("Hay " + t + " entradas disponibles\n"+ Principal.getEntradas() +" de la zona principal\n"+ Compra_venta.getEntradas() +" de la zona Compra/Venta\n"+ VIP.getEntradas() +" de la zona VIP");
+                    System.out.println("Hay " + t + " entradas disponibles\n" + Principal.getEntradas() + " de la zona principal\n" + Compra_venta.getEntradas() + " de la zona Compra/Venta\n" + VIP.getEntradas() + " de la zona VIP");
                     break;
 
                 case 2:
@@ -43,14 +43,23 @@ public class Expo_Caravanas {
                         case 1:
                             Principal.setEntradas(Principal.getEntradas() - v);
                             Principal.verificar();
+                            if (b = true) {
+                                Principal.setEntradas(Principal.getEntradas() + v);
+                            }
                             break;
                         case 2:
                             Compra_venta.setEntradas(Compra_venta.getEntradas() - v);
                             Compra_venta.verificar();
+                            if (b = true) {
+                                Compra_venta.setEntradas(Compra_venta.getEntradas() - v);
+                            }
                             break;
                         case 3:
                             VIP.setEntradas(VIP.getEntradas() - v);
                             VIP.verificar();
+                            if (b = true) {
+                                VIP.setEntradas(VIP.getEntradas() + v);
+                            }
                             break;
                         default:
                             System.out.println("Eliga una zona valida");
