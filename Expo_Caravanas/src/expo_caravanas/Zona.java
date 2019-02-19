@@ -33,7 +33,7 @@ public class Zona {
         System.out.println("Quedan: "+ entradas + " entradas");
     } else { 
         System.out.println("No hay entradas");
-        System.exit(0);
+        boolean b = true;
     }
     
     }
